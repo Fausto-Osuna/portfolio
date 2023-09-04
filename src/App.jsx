@@ -1,5 +1,9 @@
+import { Container, Typography } from "@mui/material";
+
 export default function App() {
   return (
-    <div>App</div>
+    <Container component={'main'}>
+      <Typography variant="h1">Hello World</Typography>
+    </Container>
   )
 }
