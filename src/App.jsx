@@ -1,5 +1,6 @@
 import { Container, ThemeProvider, Typography, createTheme } from "@mui/material";
 import { useState } from "react";
+import Header from "../components/Header";
 
 export default function App() {
 
@@ -14,8 +15,9 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <Header/>
       <Container component={'main'}>
-        <Typography variant="h1">Hello World</Typography>
+        
       </Container>
     </ThemeProvider>
     
