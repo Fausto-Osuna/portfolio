@@ -12,14 +12,14 @@ const data = [
 
 export default function Header() {
   return (
-    <AppBar position="static" color="primary" sx={{boxShadow: 'none'}}>
+    <AppBar position="static" color="transparent" sx={{boxShadow: 'none'}}>
       <Toolbar sx={{display: 'flex', justifyContent: 'space-between'}}>
         <Box component={'nav'} display={'flex'} gap={4}>
             {data.map(
                 ({name, icon, href}, index) => (
                     <Link href={href} underline='none' key={index} display={'flex'} alignItems={'center'} gap={2} color={'inherit'}>
                         <Icon>{icon}</Icon>
-                        <Typography variant='h5'>{name}</Typography>
+                        <Typography variant='h6'>{name}</Typography>
                     </Link>
                 )
             )}
