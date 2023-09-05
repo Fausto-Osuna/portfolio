@@ -6,7 +6,8 @@ export default function App() {
 
   const theme = createTheme({
     palette: {
-      mode: 'dark'
+      mode: 'dark',
+      
     }
   })
 

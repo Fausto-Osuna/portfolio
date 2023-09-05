@@ -12,7 +12,7 @@ const data = [
 
 export default function Header() {
   return (
-    <AppBar position="static" color="transparent" sx={{boxShadow: 'none'}}>
+    <AppBar position="static" color="primary" sx={{boxShadow: 'none'}}>
       <Toolbar sx={{display: 'flex', justifyContent: 'space-between'}}>
         <Box component={'nav'} display={'flex'} gap={4}>
             {data.map(
@@ -26,7 +26,7 @@ export default function Header() {
         </Box>
         <Box display={'flex'} alignItems={'center'}>
             <Icon><LightModeOutlined/></Icon>
-            <Switch color='primary'/>
+            <Switch/>
         </Box>
       </Toolbar>
     </AppBar>
