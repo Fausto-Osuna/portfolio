@@ -1,33 +1,32 @@
-import { HomeOutlined, LightModeOutlined, MailOutline, PersonOutline } from '@mui/icons-material'
-import { Box, Icon, Link, Switch } from '@mui/material'
+import { DarkModeOutlined, HomeOutlined, LightModeOutlined, MailOutline, PersonOutline } from '@mui/icons-material'
+import { Box, Icon, IconButton, Link, Switch } from '@mui/material'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 
 const data = [
-    {name: 'Home', icon: <HomeOutlined/>, href: '#'},
-    {name: 'About', icon: <PersonOutline/>, href: '#'},
-    {name: 'Contact', icon: <MailOutline/>, href: '#'}
+    {name: 'Inicio', icon: <HomeOutlined/>, href: '#home'},
+    {name: 'Sobre mi', icon: <PersonOutline/>, href: '#'},
+    {name: 'Contactame', icon: <MailOutline/>, href: '#'}
 ]
 
-export default function Header() {
+export default function Header({darkMode, setDarkMode}) {
   return (
-    <AppBar position="static" color="transparent" sx={{boxShadow: 'none'}}>
+    <AppBar position="fixed" color="transparent" sx={{boxShadow: 'none'}}>
       <Toolbar sx={{display: 'flex', justifyContent: 'space-between'}}>
         <Box component={'nav'} display={'flex'} gap={4}>
             {data.map(
                 ({name, icon, href}, index) => (
-                    <Link href={href} underline='none' key={index} display={'flex'} alignItems={'center'} gap={2} color={'inherit'}>
+                    <Link href={href} underline='none' key={index} display={'flex'} gap={1} color={'inherit'}>
                         <Icon>{icon}</Icon>
                         <Typography variant='h6'>{name}</Typography>
                     </Link>
                 )
             )}
         </Box>
-        <Box display={'flex'} alignItems={'center'}>
-            <Icon><LightModeOutlined/></Icon>
-            <Switch/>
-        </Box>
+        <IconButton color='inherit' onClick={() => setDarkMode(!darkMode)}>
+          {darkMode == false ? <LightModeOutlined/> : <DarkModeOutlined/>}
+        </IconButton>
       </Toolbar>
     </AppBar>
   )
