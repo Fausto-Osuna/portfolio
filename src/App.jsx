@@ -1,24 +1,30 @@
-import { Container, ThemeProvider, Typography, createTheme } from "@mui/material";
+import { Container, CssBaseline, ThemeProvider, Typography, createTheme, makeStyles } from "@mui/material";
 import { useState } from "react";
 import Header from "../components/Header";
+import Profile from "../components/Profile";
 
 export default function App() {
 
+  const [darkMode, setDarkMode] = useState(false)
   const theme = createTheme({
     palette: {
-      mode: 'dark',
-      
+      background: {
+        default: darkMode ? "#0A131F" : '#f4f3ee',
+      },
+      mode: darkMode == false ? 'light' : 'dark'
+    },
+    typography: {
+      fontFamily: 'Comfortaa'
     }
   })
-
-  const [darkMode, setDarkMode] = useState(false)
 
 
   return (
     <ThemeProvider theme={theme}>
-      <Header/>
-      <Container component={'main'}>
-        
+      <CssBaseline/>
+      <Container component={'main'} sx={{width: '80%'}}>
+        <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
+        <Profile/>
       </Container>
     </ThemeProvider>
     
