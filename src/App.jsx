@@ -2,6 +2,7 @@ import { Container, CssBaseline, Divider, ThemeProvider, Typography, createTheme
 import { useState } from "react";
 import Header from "../components/Header";
 import Profile from "../components/Profile";
+import About from "../components/About";
 
 export default function App() {
 
@@ -26,6 +27,7 @@ export default function App() {
         <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
         <Profile/>
         <Divider sx={{mt: 4}}/>
+        <About/>
       </Container>
     </ThemeProvider>
     
