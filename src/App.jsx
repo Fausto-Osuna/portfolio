@@ -1,4 +1,4 @@
-import { Container, CssBaseline, ThemeProvider, Typography, createTheme, makeStyles } from "@mui/material";
+import { Container, CssBaseline, Divider, ThemeProvider, Typography, createTheme, makeStyles } from "@mui/material";
 import { useState } from "react";
 import Header from "../components/Header";
 import Profile from "../components/Profile";
@@ -25,6 +25,7 @@ export default function App() {
       <Container component={'main'} sx={{width: '80%'}}>
         <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
         <Profile/>
+        <Divider sx={{mt: 4}}/>
       </Container>
     </ThemeProvider>
     
